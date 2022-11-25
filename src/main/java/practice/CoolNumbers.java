@@ -5,37 +5,37 @@ import java.util.*;
 public class CoolNumbers {
 
     public static List<String> generateCoolNumbers() {
-        String[] XYZ = {"А", "В", "Е", "К", "М", "Н", "О", "Р", "С", "Т", "У", "Х"};
-        String[] N = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
-        String[] R = new String[198];
+        String[] word = {"А", "В", "Е", "К", "М", "Н", "О", "Р", "С", "Т", "У", "Х"};
+        String[] number = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        String[] region = new String[198];
         int a = 0;
         int b = 0;
         int c = 0;
         int d = 0;
         int e = 0;
-        for (int i = 0; i <= R.length - 1; i++) {
+        for (int i = 0; i <= region.length - 1; i++) {
             if (i <= 8) {
-                R[i] = "0" + (i + 1);
-            } else R[i] = String.valueOf(i + 1);
+                region[i] = "0" + (i + 1);
+            } else region[i] = String.valueOf(i + 1);
         }
         List<String> coolNumber = new ArrayList<>();
-        while (!(e == R.length)) {
-            String number = XYZ[a] + N[b] + N[b] + N[b] + XYZ[c] + XYZ[d] + R[e];
-            coolNumber.add(number);
+        while (!(e == region.length)) {
+            String plate = word[a] + number[b] + number[b] + number[b] + word[c] + word[d] + region[e];
+            coolNumber.add(plate);
             ++a;
-            if (a == XYZ.length) {
+            if (a == word.length) {
                 a = 0;
                 c++;
             }
-            if (c == XYZ.length) {
+            if (c == word.length) {
                 c = 0;
                 d++;
             }
-            if (d == XYZ.length) {
+            if (d == word.length) {
                 d = 0;
                 b++;
             }
-            if (b == N.length) {
+            if (b == number.length) {
                 b = 0;
                 e++;
             }
